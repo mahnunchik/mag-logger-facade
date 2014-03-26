@@ -1,0 +1,28 @@
+{
+  "name": "mag-logger-facade",
+  "version": "0.0.1",
+  "description": "mag logger facade",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "keywords": [
+    "mag",
+    "logger",
+    "logging",
+    "log",
+    "spec",
+    "facade"
+  ],
+  "author": {
+    "name": "Eugeny Vlasenko",
+    "email": "mahnunchik+mag@gmail.com",
+    "url": "http://mahnunchik.tumblr.com/"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^1.9.0",
+    "mocha": "^1.18.0",
+    "jshint": "^2.4.4"
+  }
+}
