@@ -1,7 +1,11 @@
 {
   "name": "mag-logger-facade",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "mag logger facade",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/mahnunchik/mag-logger-facade.git"
+  },
   "main": "index.js",
   "scripts": {
     "test": "make test"
