@@ -13,7 +13,7 @@ LIB := index.js
 all: lint test
 
 test:
-	$(MOCHA) --reporter spec
+	@$(MOCHA) --reporter spec
 
 lint:
-	$(JSHINT) $(TEST_DIR) $(LIB)
+	@$(JSHINT) $(TEST_DIR) $(LIB)
