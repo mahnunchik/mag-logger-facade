@@ -10,6 +10,9 @@
   "scripts": {
     "test": "make test"
   },
+  "engines" : {
+    "node" : ">= 0.10"
+  },
   "keywords": [
     "mag",
     "logger",
