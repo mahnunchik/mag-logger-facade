@@ -62,4 +62,19 @@ Object.keys(severityLevels).forEach(function(severity){
   });
 });
 
+/**
+ * @deprecated since version 0.1.1
+ * @param {string} str
+ */
+
+Logger.prototype.write = function(str) {
+  str = str.replace(/\n$/, '');
+  this._stream.write({
+    arguments: [str],
+    severity: 'INFORMATIONAL',
+    timestamp: new Date(),
+    namespace: this._namespace
+  });
+};
+
 module.exports = Logger;
