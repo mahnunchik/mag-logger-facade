@@ -77,4 +77,14 @@ Logger.prototype.write = function(str) {
   });
 };
 
+
+Logger.prototype.log = function() {
+  this._stream.write({
+    arguments: slice.call(arguments),
+    severity: 'INFORMATIONAL',
+    timestamp: new Date(),
+    namespace: this._namespace
+  });
+};
+
 module.exports = Logger;
