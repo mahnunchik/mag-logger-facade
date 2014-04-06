@@ -2,5 +2,12 @@
 
 Logger:
 * Should respond to methods named by syslog severity levels
-* Should respond to methods named by syslog shortcut severity lavels 
+* Should respond to methods named by syslog shortcut severity lavels
+* Should respond to 'write' method
+* Should respond to 'log' method
 
+TODO api documentation
+
+## License
+
+MIT
