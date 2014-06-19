@@ -1,4 +1,10 @@
 
+/**
+ * Logger facade provides a simplified interface to various logging mechanism.
+ * This module is used by [mag](https://github.com/mahnunchik/mag) logger
+ * @module Logger
+ */
+
 var slice = Array.prototype.slice;
 
 var severityLevels = {
@@ -27,6 +33,12 @@ var severityLevels = {
     aliases: ['debug']
   }
 };
+
+/**
+ * @constructs Logger
+ * @param {WritableStream} stream - distantion to write log object
+ * @param {String} namespace - tag for each log object
+ */
 
 function Logger (stream, namespace) {
   if (!(this instanceof Logger)) {
@@ -77,6 +89,9 @@ Logger.prototype.write = function(str) {
   });
 };
 
+/**
+ * @param {...any} data - data to log
+ */
 
 Logger.prototype.log = function() {
   this._stream.write({
