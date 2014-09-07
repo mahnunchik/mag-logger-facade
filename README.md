@@ -10,6 +10,10 @@ Logger:
 * Should respond to methods named by syslog shortcut severity lavels
 * Should respond to `log` method
 
+## Specification
+
+Specification of internal log messages can be found here: [SPEC.md](https://github.com/mahnunchik/mag-logger-facade/blob/master/SPEC.md)
+
 ## API
 
 ### Logger(stream, namespace)
