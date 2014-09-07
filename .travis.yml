@@ -1,4 +1,12 @@
 language: node_js
 node_js:
-  - "0.11"
-  - "0.10"
+- '0.11'
+- '0.10'
+deploy:
+  provider: npm
+  email: mahnunchik@gmail.com
+  api_key:
+    secure: iYBEMgWqGNp9l3Cv9y+v3VPdmk4QPVnABBJB0x6kBevOYIUdj670ZRFHA6djMeJWXHv7EDqU+XjC8HaXkrwsLnfDntOeuThlCzBupe+mpCCyDxRHU+vocjFbCe4GWyXBqCMDzM9P7lKr0OYyXGIlbzE1i9LdznOO/+zWCizdTt4=
+  on:
+    tags: true
+    repo: mahnunchik/mag-logger-facade
