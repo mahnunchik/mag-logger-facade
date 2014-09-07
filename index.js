@@ -7,30 +7,42 @@
 
 var slice = Array.prototype.slice;
 
+/**
+ * According [Spec](https://tools.ietf.org/html/rfc5424#page-11)
+ */
+
 var severityLevels = {
   EMERGENCY: {
-    aliases: ['emergency', 'emerg', 'panic']
+    aliases: ['emergency', 'emerg', 'panic'],
+    code: 0
   },
   ALERT: {
-    aliases: ['alert']
+    aliases: ['alert'],
+    code: 1
   },
   CRITICAL: {
-    aliases: ['critical', 'crit']
+    aliases: ['critical', 'crit'],
+    code: 2
   },
   ERROR: {
-    aliases: ['error', 'err']
+    aliases: ['error', 'err'],
+    code: 3
   },
   WARNING: {
-    aliases: ['warning', 'warn']
+    aliases: ['warning', 'warn'],
+    code: 4
   },
   NOTICE: {
-    aliases: ['notice']
+    aliases: ['notice'],
+    code: 5
   },
   INFORMATIONAL: {
-    aliases: ['informational', 'info']
+    aliases: ['informational', 'info'],
+    code: 6
   },
   DEBUG: {
-    aliases: ['debug']
+    aliases: ['debug'],
+    code: 7
   }
 };
 
@@ -47,6 +59,8 @@ function Logger (stream, namespace) {
   if (!stream || typeof stream.write !== 'function') {
     throw new TypeError('Logger expects a writable stream instance');
   }
+
+  namespace = namespace || '';
 
   Object.defineProperty(this, '_stream', {value: stream});
   Object.defineProperty(this, '_namespace', {value: namespace});
@@ -70,7 +84,7 @@ function defineMethod(method, severity) {
 
 Object.keys(severityLevels).forEach(function(severity){
   severityLevels[severity].aliases.forEach(function(alias){
-    defineMethod(alias, severity);
+    defineMethod(alias, severityLevels[severity].code);
   });
 });
 
@@ -83,7 +97,7 @@ Logger.prototype.write = function(str) {
   str = str.replace(/\n$/, '');
   this._stream.write({
     arguments: [str],
-    severity: 'INFORMATIONAL',
+    severity: severityLevels.INFORMATIONAL.code,
     timestamp: new Date(),
     namespace: this._namespace
   });
@@ -96,7 +110,7 @@ Logger.prototype.write = function(str) {
 Logger.prototype.log = function() {
   this._stream.write({
     arguments: slice.call(arguments),
-    severity: 'INFORMATIONAL',
+    severity: severityLevels.INFORMATIONAL.code,
     timestamp: new Date(),
     namespace: this._namespace
   });

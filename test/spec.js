@@ -22,7 +22,7 @@ var methods = [
   'log'
 ];
 
-describe.skip('Specification:', function () {
+describe('Specification:', function () {
   describe('Internal log object', function () {
     methods.forEach(function(method){
       it('must contain required fields on calling "'+method+'"', function (cb) {
