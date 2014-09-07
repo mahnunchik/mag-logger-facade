@@ -10,3 +10,4 @@ deploy:
   on:
     tags: true
     repo: mahnunchik/mag-logger-facade
+    all_branches: true
