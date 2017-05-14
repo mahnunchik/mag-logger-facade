@@ -1,5 +1,7 @@
 # Mag logger facade [![Build Status](https://travis-ci.org/mahnunchik/mag-logger-facade.svg)](https://travis-ci.org/mahnunchik/mag-logger-facade)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mahnunchik/mag-logger-facade.svg)](https://greenkeeper.io/)
+
 Logger facade provides a simplified interface to various logging mechanism.
 
 This module is used by [mag](https://github.com/mahnunchik/mag) logger.
